@@ -1,12 +1,24 @@
-# 🌴 @ZonaGTA6 - Colección de Shorts Virales & Automatización n8n
+# 🌴 @ZonaGTA6 - Pack Oficial de Marca, Videos Virales & Automatización
 
-Este repositorio contiene los videos en formato vertical (9:16, 1080x1920) optimizados con ganchos virales, llamado a la acción y marca de agua anti-robo central `@ZonaGTA6`, listos para monetizar en **YouTube Shorts**, **TikTok** y **Facebook Reels**.
+![Banner ZonaGTA6](./branding/banner_portada_zonagta6.jpg)
+
+Bienvenido al repositorio central de **@ZonaGTA6**. Aquí tienes todo el material listo para lanzar y monetizar en **YouTube**, **TikTok** y **Facebook**:
+1. **Identidad de Marca Oficial** (Logo de perfil y Banner de portada).
+2. **8 Shorts Virales en 9:16** con ganchos y marca de agua anti-robo central.
+3. **Workflow automatizado de n8n** para publicar automáticamente.
 
 ---
 
-## 🎬 Videos Disponibles (Descarga Directa)
+## 🎨 Identidad Visual (Descarga Directa)
 
-Todos los videos están en la carpeta [`/shorts`](./shorts):
+| Elemento | Formato | Vista Previa | Enlace de Descarga |
+|---|---|---|---|
+| **Foto de Perfil / Avatar** | 1:1 (Cuadrado / Círculo) | <img src="./branding/logo_perfil_zonagta6.jpg" width="120" /> | [⬇️ Descargar Logo Perfil](https://github.com/rogersanalea30-maker/ROGERT/raw/main/branding/logo_perfil_zonagta6.jpg) |
+| **Banner de Canal / Portada** | 16:9 (Panorámico HD) | <img src="./branding/banner_portada_zonagta6.jpg" width="240" /> | [⬇️ Descargar Banner Portada](https://github.com/rogersanalea30-maker/ROGERT/raw/main/branding/banner_portada_zonagta6.jpg) |
+
+---
+
+## 🎬 Colección de 8 Shorts Virales (9:16 - 1080x1920)
 
 | # | Video | Descripción / Gancho | Descarga Directa |
 |---|-------|----------------------|------------------|
@@ -23,6 +35,6 @@ Todos los videos están en la carpeta [`/shorts`](./shorts):
 
 ## 🤖 Automatización con n8n
 
-En la carpeta [`/n8n`](./n8n) tienes el workflow listo:
+En la carpeta [`/n8n`](./n8n) tienes el workflow completo:
 - Archivo: [`n8n/workflow_publicar_shorts_gta6.json`](./n8n/workflow_publicar_shorts_gta6.json)
 - Publica automáticamente en **YouTube Shorts** y **Facebook Reels** a las 14:00 y 20:00 con títulos, etiquetas y descripción.
