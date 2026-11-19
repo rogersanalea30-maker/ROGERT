@@ -15,6 +15,9 @@ Bienvenido al repositorio central de **@ZonaGTA6**. Aquí tienes todo el materia
 |---|---|---|---|
 | **Foto de Perfil / Avatar** | 1:1 (Cuadrado / Círculo) | <img src="./branding/logo_perfil_zonagta6.jpg" width="120" /> | [⬇️ Descargar Logo Perfil](https://github.com/rogersanalea30-maker/ROGERT/raw/main/branding/logo_perfil_zonagta6.jpg) |
 | **Banner de Canal / Portada** | 16:9 (Panorámico HD) | <img src="./branding/banner_portada_zonagta6.jpg" width="240" /> | [⬇️ Descargar Banner Portada](https://github.com/rogersanalea30-maker/ROGERT/raw/main/branding/banner_portada_zonagta6.jpg) |
+| **Marca de Agua YouTube (Botón Suscribirse)** | 150x150 PNG Transparente | <img src="./branding/marca_agua_suscribete_150x150.png" width="80" /> | [⬇️ Descargar Marca Suscríbete (Recomendada)](https://github.com/rogersanalea30-maker/ROGERT/raw/main/branding/marca_agua_suscribete_150x150.png) |
+| **Marca de Agua YouTube (Logo Circular)** | 150x150 PNG Transparente | <img src="./branding/marca_agua_circular_150x150.png" width="80" /> | [⬇️ Descargar Marca Logo](https://github.com/rogersanalea30-maker/ROGERT/raw/main/branding/marca_agua_circular_150x150.png) |
+| **Marca de Agua YouTube (Logo + Texto)** | 150x150 PNG Transparente | <img src="./branding/marca_agua_combo_150x150.png" width="80" /> | [⬇️ Descargar Marca Combo](https://github.com/rogersanalea30-maker/ROGERT/raw/main/branding/marca_agua_combo_150x150.png) |
 
 ---
 
