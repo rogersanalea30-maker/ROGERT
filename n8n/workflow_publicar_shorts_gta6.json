@@ -1,0 +1,173 @@
+{
+  "name": "Auto-Publicador Shorts GTA 6 - @ZonaGTA6",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 14,20 * * *"
+            }
+          ]
+        }
+      },
+      "id": "e1f1c84d-6e01-443b-8520-1a6c5615d011",
+      "name": "Programador (14:00 y 20:00)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/rogersanalea30-maker/ROGERT/contents/shorts",
+        "options": {}
+      },
+      "id": "4e723528-7614-41d6-857f-13a8630739c3",
+      "name": "Obtener Lista de Videos GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Metadatos optimizados para cada video de @ZonaGTA6\nconst videoCatalog = {\n  \"GTA6_Short_1_ZonaGTA6.mp4\": {\n    title: \"¿Estos serán los gráficos reales de GTA 6? 😱🌴\",\n    description: \"Recreación hiperrealista de Muscle Beach en Vice City. ¿Crees que Rockstar lo superará? 🔥\\n\\nSigue a @ZonaGTA6 para las mejores filtraciones y novedades.\\n\\n#GTA6 #GTAVI #ViceCity #Gaming #Shorts #ZonaGTA6\"\n  },\n  \"GTA6_Short_2_ZonaGTA6.mp4\": {\n    title: \"¡Las FÍSICAS del agua en GTA 6 están a otro nivel! 🌊🎮\",\n    description: \"Mira la física de las olas y el océano en el motor de GTA 6. ¿Tu PC o consola lo aguantará?\\n\\nSigue a @ZonaGTA6.\\n\\n#GTA6 #GTAVI #RockstarGames #Gaming #Reels #Shorts\"\n  },\n  \"GTA6_Short_3_ZonaGTA6.mp4\": {\n    title: \"Vice City de NOCHE con Ray Tracing luce brutal ✨🌃\",\n    description: \"La iluminación nocturna y los reflejos de neón en Vice City. ¡Esto va a romper la industria!\\n\\nSigue a @ZonaGTA6.\\n\\n#GTA6 #ViceCity #RayTracing #GamingShorts #ZonaGTA6\"\n  },\n  \"GTA6_Short_4_ZonaGTA6.mp4\": {\n    title: \"Manejando cuatrimoto a toda velocidad por la playa de GTA 6 🏖️💨\",\n    description: \"La deformación de la arena y el control de vehículos en GTA VI. ¿Qué vehículo probarás primero?\\n\\nSigue a @ZonaGTA6.\\n\\n#GTA6 #Gaming #Shorts #Viral #ZonaGTA6\"\n  },\n  \"GTA6_Short_5_ZonaGTA6.mp4\": {\n    title: \"El secreto de los autos enterrados en la arena de GTA 6 🚗⏳\",\n    description: \"Detalles ocultos que casi nadie notó en el mapa de Vice City. ¡El nivel de detalle es insano!\\n\\nSigue a @ZonaGTA6.\\n\\n#GTA6 #CuriosidadesGaming #GTA6Leaks #Shorts\"\n  },\n  \"GTA6_Short_6_ZonaGTA6.mp4\": {\n    title: \"El nuevo sistema de sonido y tráfico en GTA 6 🔊🚦\",\n    description: \"Cómo funcionará el radar acústico y la densidad de tráfico en la ciudad.\\n\\nSigue a @ZonaGTA6.\\n\\n#GTA6 #GTAVI #GamingCommunity #ZonaGTA6\"\n  },\n  \"GTA6_Short_7_ZonaGTA6.mp4\": {\n    title: \"El sistema de huracanes y tormentas en GTA 6 ⛈️🌴\",\n    description: \"Vice City tendrá clima dinámico extremo con físicas de viento en palmeras.\\n\\nSigue a @ZonaGTA6.\\n\\n#GTA6 #ViceCity #Gaming #ZonaGTA6 #Shorts\"\n  },\n  \"GTA6_Short_8_ZonaGTA6.mp4\": {\n    title: \"La densidad de NPCs más viva de la historia de los videojuegos 🚶‍♂️🏙️\",\n    description: \"Cada peatón tiene su propia rutina e inteligencia artificial avanzada en GTA 6.\\n\\nSigue a @ZonaGTA6.\\n\\n#GTA6 #RockstarGames #NextGen #GamingShorts\"\n  }\n};\n\nconst items = $input.all();\nconst validFiles = items.filter(item => item.json.name && item.json.name.endsWith('.mp4') && item.json.name.includes('ZonaGTA6'));\n\n// Seleccionar un video aleatorio o el primero disponible\nconst randomIndex = Math.floor(Math.random() * validFiles.length);\nconst selected = validFiles[randomIndex].json;\nconst meta = videoCatalog[selected.name] || {\n  title: \"Nuevo vistazo filtrado a GTA 6 🔥🌴 #Shorts\",\n  description: \"Las mejores novedades y detalles de GTA VI.\\n\\nSigue a @ZonaGTA6.\\n\\n#GTA6 #GTAVI #Gaming #Shorts\"\n};\n\nreturn [{\n  json: {\n    fileName: selected.name,\n    downloadUrl: `https://github.com/rogersanalea30-maker/ROGERT/raw/main/shorts/${selected.name}`,\n    title: meta.title,\n    description: meta.description,\n    tags: [\"GTA6\", \"GTA VI\", \"Vice City\", \"ZonaGTA6\", \"Gaming\", \"Shorts\", \"Rockstar Games\"],\n    publishedDate: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "c138f51a-d029-4508-8e6f-4228c2e71891",
+      "name": "Generar Metadatos y Gancho Viral",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.downloadUrl }}",
+        "responseFormat": "file",
+        "options": {}
+      },
+      "id": "76d8ca19-b586-455a-b605-7f2cb261a8ef",
+      "name": "Descargar Video (.MP4)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        860,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "title": "={{ $('Generar Metadatos y Gancho Viral').item.json.title }} #Shorts",
+        "description": "={{ $('Generar Metadatos y Gancho Viral').item.json.description }}",
+        "categoryId": "20",
+        "tags": "={{ $('Generar Metadatos y Gancho Viral').item.json.tags.join(',') }}",
+        "privacyStatus": "public",
+        "binaryPropertyName": "data"
+      },
+      "id": "8f3b469b-cb7e-4d40-8484-9842a59a7212",
+      "name": "Publicar en YouTube Shorts",
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/me/video_reels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer TU_FACEBOOK_PAGE_ACCESS_TOKEN"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "upload_phase",
+              "value": "start"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "55bbad42-df21-4f11-9493-272e01df3910",
+      "name": "Iniciar Subida Facebook Reels",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1100,
+        420
+      ]
+    }
+  ],
+  "connections": {
+    "Programador (14:00 y 20:00)": {
+      "main": [
+        [
+          {
+            "node": "Obtener Lista de Videos GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Lista de Videos GitHub": {
+      "main": [
+        [
+          {
+            "node": "Generar Metadatos y Gancho Viral",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar Metadatos y Gancho Viral": {
+      "main": [
+        [
+          {
+            "node": "Descargar Video (.MP4)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar Video (.MP4)": {
+      "main": [
+        [
+          {
+            "node": "Publicar en YouTube Shorts",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Iniciar Subida Facebook Reels",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
